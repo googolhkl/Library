@@ -6,13 +6,13 @@ using namespace std;
 
 int main(){
     cout<<"hello world"<<endl;
-    cout<< hkl::rand::Generate(1,10)<<endl;
+    cout<< hkl::rand::MakeRangeNum(1,10)<<endl;
     return UnitTest::RunAllTests();
 }
 
 SUITE(totaltest){
     TEST(test1){
-        if(hkl::rand::Generate(1,10) ){
+        if(hkl::rand::MakeRangeNum(1,10) ){
             CHECK(true);
         } else{
             CHECK(false);
@@ -20,7 +20,7 @@ SUITE(totaltest){
     }
 
     TEST(test2){
-        if(hkl::rand::Generate(1,10) ){
+        if(hkl::rand::MakeRangeNum(1,10) ){
             CHECK(true);
         } else{
             CHECK(false);
