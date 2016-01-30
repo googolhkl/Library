@@ -21,7 +21,7 @@ SUITE(totaltest){
     // TrueOrFalse테스트
     // 100%확률로 통과
     TEST(test2){
-        if(hkl::rand::TrueOrFalse(100) ){
+        if(hkl::rand::TrueOrFalse(100) ){   //100%확률로 true를 출력해주세요
             CHECK(true);
         } else{
             CHECK(false);
@@ -38,7 +38,7 @@ SUITE(totaltest){
     
     // NumOfSuccess테스트
     TEST ( numofsuccess ){
-        int num = hkl::rand::NumOfSuccess(1000,0.45);
+        int num = hkl::rand::NumOfSuccess(1000,0.45);   // 1000명중 45%만이 지구탈출을 할수있다면 몇명이 탈출할수있을까?
         if(num){
             cout<<"num: "<<num<<endl;
             CHECK(true);
@@ -56,5 +56,14 @@ SUITE(totaltest){
         }
     }
     // MakeNearByNum테스트
+    TEST ( makenearbynum){
+        long double num = hkl::rand::MakeNearByNum(174,5);  //표준 키 174에서 +-5cm까지 출력
+        if(num){
+            cout<<">표준편차 : "<<num<<endl;
+            CHECK(true);
+        } else{
+            CHECK(false);
+        }
+    }
 }
 

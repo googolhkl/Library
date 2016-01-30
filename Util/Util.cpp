@@ -46,3 +46,8 @@ long long hkl::rand::NumOfSuccess(const long long obj, const double probability)
 }
 
 //MakeNearByNum
+long double hkl::rand::MakeNearByNum(long long obj, long long deviation){
+    std::random_device ran;                 // 비결정적 난수 생성
+    std::normal_distribution<> dist(obj,deviation); //정규분포
+    return dist(ran);
+}
