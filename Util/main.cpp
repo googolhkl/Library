@@ -1,6 +1,7 @@
 #include <iostream>
 #include <UnitTest++.h>
 #include "Util.h"
+#include "Time.h"
 
 using namespace std;
 
@@ -65,5 +66,13 @@ SUITE(totaltest){
             CHECK(false);
         }
     }
-}
 
+    // Time테스트
+    TEST ( timetest ){
+        hkl::time timer;
+        CHECK(timer.Yesterday());
+        CHECK(timer.Today());
+        CHECK(timer.Tomorrow());
+        CHECK(timer.CurrentTime());
+    }
+}
