@@ -75,4 +75,12 @@ SUITE(totaltest){
         CHECK(timer.Tomorrow());
         CHECK(timer.CurrentTime());
     }
+
+    TEST ( timertest){
+        hkl::timer::Start();
+        for(int i=0; i<100000000; i++)
+            i+=1;
+        cout<<hkl::timer::End()<<endl;
+        CHECK(hkl::timer::End());
+    }
 }

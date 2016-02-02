@@ -40,6 +40,15 @@ namespace hkl{
         bool Day(int day);
         bool CurrentTime();
     };
+
+    class timer{
+        private:
+            static chrono::system_clock::time_point start;
+        public:
+            static void Start();
+            static double End();
+    };
+    chrono::system_clock::time_point timer::start = std::chrono::system_clock::now();
 }
 
 
