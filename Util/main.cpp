@@ -70,10 +70,10 @@ SUITE(totaltest){
     // Time테스트
     TEST ( timetest ){
         hkl::time timer;
-        CHECK(timer.Yesterday());
-        CHECK(timer.Today());
-        CHECK(timer.Tomorrow());
-        CHECK(timer.CurrentTime());
+        CHECK(hkl::time::Yesterday());
+        CHECK(hkl::time::Today());
+        CHECK(hkl::time::Tomorrow());
+        CHECK(hkl::time::CurrentTime());
     }
 
     TEST ( timertest){

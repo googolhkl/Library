@@ -20,26 +20,29 @@ using namespace std;
 #define TOMORROW   1
 
 namespace hkl{
+        array<wchar_t, WBUFFER_SIZE> buffer;
     class time{
     private:
         //멤버 변수
-        time_t startTime=0;
-        struct tm * tmp=nullptr;
-        array<wchar_t, WBUFFER_SIZE> buffer;
+        static time_t startTime;
+        static struct tm * tmp;
+        //static array<wchar_t, WBUFFER_SIZE> buffer;
         //멤버 함수
-        time_t* SystemTime();
-        struct tm*  TimeToTm(int day);
+        static time_t* SystemTime();
+        static struct tm*  TimeToTm(int day);
         
     public:
         //멤버 함수
         time(){}
         ~time(){}
-        bool Today();
-        bool Yesterday();
-        bool Tomorrow();
-        bool Day(int day);
-        bool CurrentTime();
+        static bool Today();
+        static bool Yesterday();
+        static bool Tomorrow();
+        static bool Day(int day);
+        static bool CurrentTime();
     };
+    time_t time::startTime=0;
+    struct tm * time::tmp=nullptr;
 
     class timer{
         private:
