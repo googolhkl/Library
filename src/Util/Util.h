@@ -1,5 +1,5 @@
-#ifndef HKLLIBRARY_UTIL_UTIL_H
-#define HKLLIBRARY_UTIL_UTIL_H
+#ifndef HKLLIBRARY_SRC_UTIL_UTIL_H
+#define HKLLIBRARY_SRC_UTIL_UTIL_H
 #include <random>
 
 using namespace std;
@@ -25,4 +25,4 @@ namespace hkl{
 
 }
 
-#endif  // HKLLIBRARY_UTIL_UTIL_H
+#endif  // HKLLIBRARY_SRC_UTIL_UTIL_H

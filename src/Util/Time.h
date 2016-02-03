@@ -1,5 +1,5 @@
-#ifndef HKLLIBRARY_UTIL_TIME_H
-#define HKLLIBRARY_UTIL_TIME_H
+#ifndef HKLLIBRARY_SRC_UTIL_TIME_H
+#define HKLLIBRARY_SRC_UTIL_TIME_H
 #include <ctime>
 #include <chrono>
 #include <array>
@@ -55,4 +55,4 @@ namespace hkl{
 }
 
 
-#endif  // HKLLIBRARY_UTIL_TIME_H
+#endif  // HKLLIBRARY_SRC_UTIL_TIME_H
