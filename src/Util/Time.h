@@ -11,7 +11,7 @@
 #define DATE_FORMAT         L"%Y-%m-%d %A"
 #define DB_FORMAT           L"%Y-%m-%d %H:%M:%S"
 
-#define WBUFFER_SIZE            120
+#define WBUFFER_SIZE              120
 
 #define YESTERDAY -1
 #define TODAY      0
@@ -36,7 +36,6 @@ namespace hkl{
             //멤버 함수
             static time_t* SystemTime();
             static struct tm*  TimeToTm(int day);
-        
     };
     time_t time::startTime=0;
     struct tm * time::tmp=nullptr;
