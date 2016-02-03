@@ -3,12 +3,12 @@
 #include <random>
 
 
-namespace hkl{
+namespace hkl {
 // random,확률 관련 클래스
-class rand{
+class rand {
     public:
-        rand(){};
-        ~rand(){};
+        rand() {};
+        ~rand() {};
         static long long MakeRangeNum();                                            //임의범위 난수 하나 발생
         static long long MakeRangeNum(const long long start,const long long end);   //지정범위 난수 하나 발생
         static bool TrueOrFalse(int             probability);                       // n%확률로 true 또는 or생성

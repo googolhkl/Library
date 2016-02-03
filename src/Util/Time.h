@@ -17,12 +17,12 @@
 #define TODAY      0
 #define TOMORROW   1
 
-namespace hkl{
-class time{
+namespace hkl {
+class time {
     public:
         //멤버 함수
-        time(){}
-        ~time(){}
+        time() {}
+        ~time() {}
         static bool Today();
         static bool Yesterday();
         static bool Tomorrow();
@@ -41,7 +41,7 @@ time_t time::startTime=0;
 struct tm * time::tmp=nullptr;
 std::array<wchar_t, WBUFFER_SIZE> time::buffer;
 
-class timer{
+class timer {
     public:
         static void Start();
         static double End();
