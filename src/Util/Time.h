@@ -18,37 +18,37 @@
 #define TOMORROW   1
 
 namespace hkl{
-    class time{
-        public:
-            //멤버 함수
-            time(){}
-            ~time(){}
-            static bool Today();
-            static bool Yesterday();
-            static bool Tomorrow();
-            static bool Day(int day);
-            static bool CurrentTime();
-        private:
-            //멤버 변수
-            static time_t startTime;
-            static struct tm * tmp;
-            static std::array<wchar_t, WBUFFER_SIZE> buffer;
-            //멤버 함수
-            static time_t* SystemTime();
-            static struct tm*  TimeToTm(int day);
-    };
-    time_t time::startTime=0;
-    struct tm * time::tmp=nullptr;
-    std::array<wchar_t, WBUFFER_SIZE> time::buffer;
+class time{
+    public:
+        //멤버 함수
+        time(){}
+        ~time(){}
+        static bool Today();
+        static bool Yesterday();
+        static bool Tomorrow();
+        static bool Day(int day);
+        static bool CurrentTime();
+    private:
+        //멤버 변수
+        static time_t startTime;
+        static struct tm * tmp;
+        static std::array<wchar_t, WBUFFER_SIZE> buffer;
+        //멤버 함수
+        static time_t* SystemTime();
+        static struct tm*  TimeToTm(int day);
+};
+time_t time::startTime=0;
+struct tm * time::tmp=nullptr;
+std::array<wchar_t, WBUFFER_SIZE> time::buffer;
 
-    class timer{
-        public:
-            static void Start();
-            static double End();
-        private:
-            static std::chrono::system_clock::time_point start;
-    };
-    std::chrono::system_clock::time_point timer::start = std::chrono::system_clock::now();
+class timer{
+    public:
+        static void Start();
+        static double End();
+    private:
+        static std::chrono::system_clock::time_point start;
+};
+std::chrono::system_clock::time_point timer::start = std::chrono::system_clock::now();
 }
 
 
