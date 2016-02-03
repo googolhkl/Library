@@ -2,7 +2,6 @@
 #define HKLLIBRARY_SRC_UTIL_UTIL_H
 #include <random>
 
-using namespace std;
 
 namespace hkl{
 

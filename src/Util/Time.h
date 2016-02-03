@@ -4,8 +4,6 @@
 #include <chrono>
 #include <array>
 
-using namespace std;
-
 // 시간 포맷은 아래 링크
 // http://www.cplusplus.com/reference/ctime/strftime/
 #define DATETIME_FORMAT     L"%Y-%m-%d %A %r"
@@ -25,7 +23,7 @@ namespace hkl{
             //멤버 변수
             static time_t startTime;
             static struct tm * tmp;
-            static array<wchar_t, WBUFFER_SIZE> buffer;
+            static std::array<wchar_t, WBUFFER_SIZE> buffer;
             //멤버 함수
             static time_t* SystemTime();
             static struct tm*  TimeToTm(int day);
@@ -42,16 +40,16 @@ namespace hkl{
     };
     time_t time::startTime=0;
     struct tm * time::tmp=nullptr;
-    array<wchar_t, WBUFFER_SIZE> time::buffer;
+    std::array<wchar_t, WBUFFER_SIZE> time::buffer;
 
     class timer{
         private:
-            static chrono::system_clock::time_point start;
+            static std::chrono::system_clock::time_point start;
         public:
             static void Start();
             static double End();
     };
-    chrono::system_clock::time_point timer::start = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point timer::start = std::chrono::system_clock::now();
 }
 
 
