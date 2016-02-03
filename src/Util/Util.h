@@ -7,7 +7,6 @@ namespace hkl{
 
     // random,확률 관련 클래스
         class rand{
-            private:
             public:
             rand(){};
             ~rand(){};
@@ -18,6 +17,7 @@ namespace hkl{
             static long long NumOfSuccess(const long long obj, const int    probability) throw(int);// 성공횟수 확률
             static long long NumOfSuccess(const long long obj, const double probability);
             static long double MakeNearByNum(long long obj,long long deviation);        //표준편차
+            private:
         };
 
 

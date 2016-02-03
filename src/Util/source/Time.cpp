@@ -1,19 +1,6 @@
 #include "Time.h"
 
 namespace hkl{
-    /* 아래 두 함수는 private 함수  */
-    time_t* time::SystemTime(){
-        startTime =std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-        return &startTime;
-    }
-
-    struct tm* time::TimeToTm(int day){
-        tmp = localtime(SystemTime());
-        tmp->tm_mday += day;
-        tmp->tm_wday += day;
-        mktime( tmp );          // 윤년도 계산
-        return tmp;
-    }
 
 /* 아래 함수들은 public 함수  */
     bool time::Today(){
@@ -60,5 +47,19 @@ namespace hkl{
     double timer::End(){
         std::chrono::duration<double> sec = std::chrono::system_clock::now() - start;
         return sec.count();
+    }
+
+    /* 아래 두 함수는 private 함수  */
+    time_t* time::SystemTime(){
+        startTime =std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+        return &startTime;
+    }
+
+    struct tm* time::TimeToTm(int day){
+        tmp = localtime(SystemTime());
+        tmp->tm_mday += day;
+        tmp->tm_wday += day;
+        mktime( tmp );          // 윤년도 계산
+        return tmp;
     }
 }

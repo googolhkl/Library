@@ -19,15 +19,6 @@
 
 namespace hkl{
     class time{
-        private:
-            //멤버 변수
-            static time_t startTime;
-            static struct tm * tmp;
-            static std::array<wchar_t, WBUFFER_SIZE> buffer;
-            //멤버 함수
-            static time_t* SystemTime();
-            static struct tm*  TimeToTm(int day);
-        
         public:
             //멤버 함수
             time(){}
@@ -37,17 +28,26 @@ namespace hkl{
             static bool Tomorrow();
             static bool Day(int day);
             static bool CurrentTime();
+        private:
+            //멤버 변수
+            static time_t startTime;
+            static struct tm * tmp;
+            static std::array<wchar_t, WBUFFER_SIZE> buffer;
+            //멤버 함수
+            static time_t* SystemTime();
+            static struct tm*  TimeToTm(int day);
+        
     };
     time_t time::startTime=0;
     struct tm * time::tmp=nullptr;
     std::array<wchar_t, WBUFFER_SIZE> time::buffer;
 
     class timer{
-        private:
-            static std::chrono::system_clock::time_point start;
         public:
             static void Start();
             static double End();
+        private:
+            static std::chrono::system_clock::time_point start;
     };
     std::chrono::system_clock::time_point timer::start = std::chrono::system_clock::now();
 }
