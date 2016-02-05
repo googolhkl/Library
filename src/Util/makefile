@@ -1,7 +1,7 @@
 # 공유라이브러리로 만들 이름
 SHAREDNAME=hklUtil.so
 # 어떤소스를 공유라이브러리로 만들지,여러개 가능
-SHAREDOBJECT=Util.cpp Time.cpp
+SHAREDOBJECT=Util.cpp Time.cpp DB.cpp
 
 # main함수가 들어있는 소스파일이름
 MAIN=main
@@ -10,7 +10,7 @@ MAIN=main
 gxx=g++ -std=c++11
 
 # 유틸라이브러리와 유닛테스트라이브러리
-LIBS=./hklUtil.so -lunittest++
+LIBS=./hklUtil.so -lunittest++ -I/usr/local/include -I/user/local/include/cppconn -lmysqlcppconn
 
 
 ################################### 행동 방식 #####################################
@@ -24,4 +24,4 @@ clean:
 	rm $(MAIN) $(MAIN).o
 
 shared:
-	$(gxx) -shared -fPIC -o $(SHAREDNAME) $(SHAREDOBJECT)
+	$(gxx) -shared -fPIC -o $(SHAREDNAME) $(SHAREDOBJECT) -I/usr/local/include -I/user/local/include/cppconn -lmysqlcppconn
