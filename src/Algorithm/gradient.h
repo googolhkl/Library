@@ -3,7 +3,7 @@
 #include <vector>
 
 namespace hkl {
-    namespace supervised {
+    namespace algorithm {
 
     //batch gradient descent
     class batchGD {

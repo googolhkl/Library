@@ -2,7 +2,7 @@
 #include <iostream>
 
 namespace hkl {
-    namespace supervised {
+    namespace algorithm {
 //private 멤버 함수
     double batchGD::H (const double x)const {
         return theta0 + theta1*x;
@@ -41,4 +41,3 @@ namespace hkl {
     }
     }
 }
-//lllllllll
