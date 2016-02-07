@@ -1,7 +1,7 @@
 # 공유라이브러리로 만들 이름
 SHAREDNAME=hklAlgorithm.so
 # 어떤소스를 공유라이브러리로 만들지,여러개 가능
-SHAREDOBJECT=gradient.cpp
+SHAREDOBJECT=gradient.cpp isEqual.cpp
 
 # main함수가 들어있는 소스파일이름
 MAIN=main

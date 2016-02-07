@@ -1,5 +1,6 @@
-#include "gradient.h"
 #include <iostream>
+#include "gradient.h"
+#include "isEqual.h"
 
 namespace hkl {
     namespace algorithm {
@@ -30,14 +31,36 @@ namespace hkl {
     }
 
     double batchGD::Result (const double x) {
-        for (int i=0; i< 100000; ++i) {   //TODO 수렴할때 까지 동작
+        isEqual deque1(10);
+        isEqual deque2(10);
+        while(1) {
             d0 = d1 = 0.0;
             Cost();
             theta0 -= alpha * d0/m;
             theta1 -= alpha * d1/m;
-            std::cout<<"theta0 : "<<theta0 <<" theta1 : "<< theta1<<std::endl;
+            if (deque1.Element(theta0) && deque2.Element(theta1))
+            {
+                //std::cout<<"종룢"<<std::endl;
+                    return H(x);
+            }
+            //std::cout<<"theta0 : "<<theta0 <<" theta1 : "<< theta1<<std::endl;
         }
         return H(x);
     }
+
+    bool batchGD::Setxv (const double x,const int idx) {
+        if(xv.size() <= idx)
+            xv.resize(xv.size()+1);
+        xv[idx] = x;
+        return true;
+    }
+    bool batchGD::Setyv (const double y,const int idx) {
+        if(yv.size() <= idx)
+            yv.resize(yv.size()+1);
+        yv[idx] = y;
+        return true;
+    }
+
+    
     }
 }

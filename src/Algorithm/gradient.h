@@ -14,7 +14,7 @@ namespace hkl {
             double d1;
             double theta0 = 0.0;
             double theta1 = 0.0;
-            double alpha = 0.001;
+            double alpha = 0.0005;
             std::vector<double> xv;
             std::vector<double> yv;
 
@@ -29,6 +29,8 @@ namespace hkl {
             ~batchGD();
             void Input(void);       //데이터 입력받기 (현재는 수동으로 콘솔창에서 입력) TODO: database, .dat, .txt파일에서 데이터 얻기
             double Result(const double x);
+            bool Setxv(const double x,const int idx);
+            bool Setyv(const double y,const int idx);
     };
 
     }
