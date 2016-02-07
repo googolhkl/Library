@@ -2,10 +2,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <cstring>
-#include <cstdio>
-
-
 
 using namespace std;
 int main(void){
