@@ -1,4 +1,4 @@
-#include "Util.h"
+#include "util.h"
 
 namespace hkl {
     //MakeRangeNum
@@ -11,7 +11,7 @@ namespace hkl {
         std::random_device ran;                                   //비결정적 난수 생성
         std::mt19937_64 randNum( ran() );                         //비결정적 난수를 mt난수의 시드값으로
         std::uniform_int_distribution<long long> dist(start,end); //범위 생성
-        return dist( randNum );
+        return dist(randNum);
     }
 
     //TrueOrFalse

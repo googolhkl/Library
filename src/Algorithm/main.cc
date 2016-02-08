@@ -13,14 +13,14 @@ int main(void){
     // 파일에서 데이터를 받아옴
     ifstream inFile("data.dat");
     char * pch;
-    bool flag= true;
+    bool flag = true;
     string number;
-    int i=0;
+    int i = 0;
     double temp;
     while(!inFile.eof()) {
         inFile.getline(inputString,100);
         pch = strtok ( inputString, ",");
-        cout<<i<<"번째"<<endl;
+        //cout<<i<<"번째"<<endl;
         while(pch != NULL) { 
             number = pch;
             pch = strtok(NULL, ",");

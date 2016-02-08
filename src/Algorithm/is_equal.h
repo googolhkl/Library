@@ -4,11 +4,11 @@
 #include <deque>
 namespace hkl {
     namespace algorithm {
-    class isEqual {
+    class isEqual{
         public:
-            isEqual (int numsize=0);
+            isEqual(int numsize=0);
             ~isEqual();
-            bool Element (const double num);    //num에 들어간 deque에 전부 같은원소인지 확인
+            bool Element(const double num);    //num에 들어간 deque에 전부 같은원소인지 확인
         private:
             std::deque<double> myque;
             int numsize;

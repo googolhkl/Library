@@ -4,9 +4,9 @@
  */
 #include <iostream>
 #include <UnitTest++.h>
-#include "Util.h"
-#include "Time.h"
-#include "DB.h"
+#include "util.h"
+#include "time.h"
+#include "db.h"
 
 using namespace std;
 
