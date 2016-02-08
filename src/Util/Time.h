@@ -29,13 +29,13 @@ class time {
         static bool Day(int day);
         static bool CurrentTime();
     private:
+        //멤버 함수
+        static time_t* SystemTime();
+        static struct tm*  TimeToTm(int day);
         //멤버 변수
         static time_t startTime;
         static struct tm * tmp;
         static std::array<wchar_t, WBUFFER_SIZE> buffer;
-        //멤버 함수
-        static time_t* SystemTime();
-        static struct tm*  TimeToTm(int day);
 };
 time_t time::startTime=0;
 struct tm * time::tmp=nullptr;

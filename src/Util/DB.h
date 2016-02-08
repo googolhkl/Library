@@ -20,7 +20,7 @@ class DB {
         DB();
         ~DB();
         void Execute (std::string str) throw(sql::SQLException);         //명령어 수행
-        void ExecuteQuery (std::string str) throw(sql::SQLException);    //사용할 때 바꿔줘야하는.. 사용자제
+        void ExecuteQuery (std::string str) throw(sql::SQLException);    //사용할 때 바꿔줘야하는.. 사용자제.
     private:
         void QuerySuccess(std::string str);
         void QueryFailed(std::string str);
