@@ -16,16 +16,21 @@ namespace hkl {
 
 class file {
     public:
+        //멤버함수
         file();
         file(const std::string filename);
         ~file();
 
         bool SetFileName(const std::string filename);
-        Eigen::MatrixXd Size();
+        // 빈 파일이나 데이터 줄사이에 공백이 있으면 오동작
         Eigen::MatrixXd Read();
         Eigen::MatrixXd Read(const std::string filename);
 
     private:
+        //멤버함수
+        Eigen::MatrixXd Size();
+
+        //멤버변수
         std::ifstream fin_;             //입력스트림
         std::ofstream fout_;            //출력스트림
         int numOfRow_ = 1;

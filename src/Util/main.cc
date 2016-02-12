@@ -95,9 +95,11 @@ SUITE (totaltest) {
         hkl::file myfile;
         Eigen::MatrixXd f = myfile.Read("datax.txt");
         cout<<f<<endl;
+        cout<<"size : "<<f.rows()<<", "<<f.cols()<<endl;
 
         f = myfile.Read("datay.txt");
         cout<<f<<endl;
+        cout<<"size : "<<f.rows()<<", "<<f.cols()<<endl;
 
         CHECK(true);
     }

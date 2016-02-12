@@ -20,34 +20,6 @@ bool file::SetFileName(const string filename) {
     return true;
 }
 
-Eigen::MatrixXd file::Size() {
-    numOfRow_=1;
-    numOfCol_=1;
-    fin_.open(filename_);
-    if(!fin_) { 
-        cout<<"input failed"<<endl;
-        exit(-1);
-    }
-
-    char tempStr[1024];
-    while(fin_.getline(tempStr,1024)) {
-        string tempString = tempStr;     //char -> string
-        string token;
-        stringstream stream(tempString);
-        while(stream >> token) {
-            numOfCol_++;
-        }
-        numOfRow_++;
-    }
-    numOfRow_--;
-    numOfCol_ = (numOfCol_-1)/numOfRow_;
-
-    Eigen::MatrixXd tempM(1,2);         // [ row column ] matrix 생성
-    tempM(0,0) = numOfRow_;
-    tempM(0,1) = numOfCol_;
-    fin_.close();
-    return tempM;                       // matrix에는 datafile의 정보가 들어가있음
-}
 
 Eigen::MatrixXd file::Read() {
     Size();
@@ -92,6 +64,39 @@ Eigen::MatrixXd file::Read(const string filename) {
     }
     fin_.close();
     return m_;
+}
+
+// private 영역
+Eigen::MatrixXd file::Size() {
+    numOfRow_=1;
+    numOfCol_=1;
+    fin_.open(filename_);
+    if(!fin_) { 
+        cout<<"input failed"<<endl;
+        exit(-1);
+    }
+
+    char tempStr[1024];
+    bool isEmpty = true;
+    //fin_.exceptions(std::ifstream::failbit |  std::ifstream::badbit);
+    while(fin_.getline(tempStr,1024)) {
+        string tempString = tempStr;     //char -> string
+        string token;
+        stringstream stream(tempString);
+        while(stream >> token) {
+            numOfCol_++;
+            isEmpty = false;
+        }
+        numOfRow_++;
+    }
+    numOfRow_--;
+    numOfCol_ = (numOfCol_-1)/numOfRow_;
+
+    Eigen::MatrixXd tempM(1,2);         // [ row column ] matrix 생성
+    tempM(0,0) = numOfRow_;
+    tempM(0,1) = numOfCol_;
+    fin_.close();
+    return tempM;                       // matrix에는 datafile의 정보가 들어가있음
 }
 
 }
