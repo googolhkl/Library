@@ -23,11 +23,11 @@ class time {
         //멤버 함수
         time() {}
         ~time() {}
-        static bool Today();
-        static bool Yesterday();
-        static bool Tomorrow();
-        static bool Day(int day);
-        static bool CurrentTime();
+        static bool Today();            // 오늘 날짜 출력
+        static bool Yesterday();        // 어제 날짜 출력
+        static bool Tomorrow();         // 내일 날짜 출력
+        static bool Day(int day);       // 인자 day일 전or후 날짜 출력
+        static bool CurrentTime();      // 현재 시간 출력
     private:
         //멤버 함수
         static time_t* SystemTime();
