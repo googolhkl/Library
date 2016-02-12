@@ -21,7 +21,12 @@ SUITE (totaltest) {
     TEST(test2) {
         cout<<"hello"<<endl;
         gradient t1("datax.txt","datay.txt");
-        cout<<t1.GetResult()<<endl;
+        cout<< t1.GetResult() <<endl;
+
+        t1.SetIteration(100000);
+        t1.SetAlpha(0.0000001);
+        cout<< t1.GetResult() <<endl;
+
         CHECK(true);
     }
 

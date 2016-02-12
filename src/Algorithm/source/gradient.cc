@@ -6,9 +6,14 @@ namespace hkl {
 namespace algorithm {
 
 gradient::gradient(const string x, const string y) {
+    xFile_ = x;
+    yFile_ = y;
+}
+
+double gradient::GetResult() {
     //data의 matrix화
-    hkl::file xFile(x);    
-    hkl::file yFile(y);     
+    hkl::file xFile(xFile_);    
+    hkl::file yFile(yFile_);     
     X_ = xFile.Read();
     Y_ = yFile.Read();
 
@@ -30,17 +35,24 @@ gradient::gradient(const string x, const string y) {
     }
 
     //cost function 과 gradient descent 
-    for(int i=0; i<iteration; i++) {
+    for(int i=0; i<iteration_; i++) {
         Eigen::MatrixXd delta = (1.0/m_) * ((h(X_,theta) - Y_).transpose() * X_);
         theta = theta - alpha_*delta;
     }
 
     Eigen::MatrixXd result = theta * in;
     result_ = result(0,0);
+    return result_;
 }
 
-double gradient::GetResult() const {
-    return result_;
+bool gradient::SetAlpha(double alpha) {
+    alpha_ = alpha;
+    return true;
+}
+
+bool gradient::SetIteration(int iter) {
+    iteration_ = iter;
+    return true;
 }
 
 //가설함수
