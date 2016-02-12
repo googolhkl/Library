@@ -4,9 +4,10 @@
  */
 #include <iostream>
 #include <UnitTest++.h>
-#include "util.h"
+#include "rand.h"
 #include "time.h"
 #include "db.h"
+#include "file.h"
 
 using namespace std;
 
@@ -87,6 +88,18 @@ SUITE (totaltest) {
             i+=1;
         cout<<hkl::timer::End()<<endl;
         CHECK(hkl::timer::End());
+    }
+
+    // Eigen library 필요
+    TEST (fileopen) {
+        hkl::file myfile;
+        Eigen::MatrixXd f = myfile.Read("datax.txt");
+        cout<<f<<endl;
+
+        f = myfile.Read("datay.txt");
+        cout<<f<<endl;
+
+        CHECK(true);
     }
 
 }

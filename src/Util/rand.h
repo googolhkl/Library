@@ -1,5 +1,5 @@
-#ifndef HKLLIBRARY_SRC_UTIL_UTIL_H
-#define HKLLIBRARY_SRC_UTIL_UTIL_H
+#ifndef HKLLIBRARY_SRC_UTIL_RAND_H
+#define HKLLIBRARY_SRC_UTIL_RAND_H
 #include <random>
 
 
@@ -20,4 +20,4 @@ class rand {
 };
 }
 
-#endif // HKLLIBRARY_SRC_UTIL_UTIL_H
+#endif // HKLLIBRARY_SRC_UTIL_RAND_H
