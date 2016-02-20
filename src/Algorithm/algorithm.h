@@ -1,5 +1,5 @@
-#ifndef HKLLIBRARY_SRC_ALGORITHM_GRADIENT_H
-#define HKLLIBRARY_SRC_ALGORITHM_GRADIENT_H
+#ifndef HKLLIBRARY_SRC_ALGORITHM_ALGORITHM_H
+#define HKLLIBRARY_SRC_ALGORITHM_ALGORITHM_H
 
 #include "../Util/file.h"
 #include <string>
@@ -7,11 +7,11 @@
 namespace hkl {
 namespace algorithm {
 
-    class gradient {
+    class linear {
         public:
-            gradient(){}
-            gradient(const std::string x, const std::string y);
-            ~gradient(){}
+            linear(){}
+            linear(const std::string x, const std::string y);
+            ~linear(){}
             double GetResult();
             bool SetAlpha(double alpha);    // 학습률 변경
             bool SetIteration(int iter);    // 반복숫자 변경
@@ -32,6 +32,12 @@ namespace algorithm {
             Eigen::MatrixXd Y_;
     };
 
+    class classification {
+
+
+
+    };
+
 }
 }
-#endif // HKLLIBRARY_SRC_ALGORITHM_GRADIENT_H
+#endif // HKLLIBRARY_SRC_ALGORITHM_ALGORITHM_H

@@ -4,7 +4,7 @@
  */
 #include <iostream>
 #include <UnitTest++.h>
-#include "gradient.h"
+#include "algorithm.h"
 
 using namespace std;
 using namespace hkl::algorithm;
@@ -20,7 +20,7 @@ SUITE (totaltest) {
 
     TEST(test2) {
         cout<<"hello"<<endl;
-        gradient t1("datax.txt","datay.txt");
+        hkl::algorithm::linear t1("datax.txt","datay.txt");
         cout<< t1.GetResult() <<endl;
 
         t1.SetIteration(100000);
